@@ -58,7 +58,8 @@ actor_rollout_ref.rollout.val_kwargs.n=16 \
 vars.dir=$PROJECT_ROOT \
 trainer.default_local_dir=$PROJECT_ROOT/checkpoints/$EXP_NAME \
 trainer.n_gpus_per_node=$N_GPUS_PER_NODE \
-actor_rollout_ref.rollout.tensor_model_parallel_size=$N_GPUS_PER_NODE"
+actor_rollout_ref.rollout.tensor_model_parallel_size=$N_GPUS_PER_NODE \
+actor_rollout_ref.rollout.gpu_memory_utilization=0.2"
 
 echo "----------------------------------------------------------------"
 echo "Starting Local SDPO Training"
