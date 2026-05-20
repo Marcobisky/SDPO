@@ -65,4 +65,13 @@ echo "Data: $DATA_PATH"
 echo "Model: $MODEL_PATH"
 echo "----------------------------------------------------------------"
 
+# Auto-preprocess: convert JSON -> parquet if parquet files are missing
+TRAIN_PARQUET="$PROJECT_ROOT/$DATA_PATH/train.parquet"
+TEST_PARQUET="$PROJECT_ROOT/$DATA_PATH/test.parquet"
+if [ ! -f "$TRAIN_PARQUET" ] || [ ! -f "$TEST_PARQUET" ]; then
+    echo "Parquet files not found. Running preprocessing..."
+    python "$PROJECT_ROOT/data/preprocess.py" --data_source "$PROJECT_ROOT/$DATA_PATH"
+    echo "Preprocessing complete."
+fi
+
 bash "$PROJECT_ROOT/training/verl_training.sh" "$EXP_NAME" "$CONFIG_NAME" "$DATA_PATH" $ARGS
