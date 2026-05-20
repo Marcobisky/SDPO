@@ -19,7 +19,7 @@ LAMBDA=0.0
 CLIP_ADV_HIGH=null
 DONTS_REPROMPT_ON_SELF_SUCCESS=True
 ALPHA=0.5
-MODEL_PATH="Qwen/Qwen2.5-7B-Instruct"
+MODEL_PATH="Qwen/Qwen2.5-3B-Instruct"
 export N_GPUS_PER_NODE=1
 
 # Allow overriding experiment name suffix
