@@ -5,7 +5,9 @@ export PYTHONBUFFERED=1
 # export RAY_DEBUG=1
 ulimit -c 0
 
-export WANDB_ENTITY="${WANDB_ENTITY:-sample-efficient-rlvr}" # team (override by setting WANDB_ENTITY before calling this script)
+# WANDB_ENTITY: leave unset to use the logged-in user's default entity.
+# To target a specific team/user, pre-export it before calling this script.
+# export WANDB_ENTITY="sample-efficient-rlvr"
 export EXPERIMENT=${1:-"experiment"}
 CONFIG_NAME=${2:-"ppo_trainer"}
 export TASK=${3:-"datasets/ttcs/lasgroup_verifiable-corpus_math-ai_math500_1000"}

@@ -36,8 +36,9 @@ export PYTHONPATH=$PROJECT_ROOT:$PYTHONPATH
 # Define USER for Hydra config (required by user.yaml)
 export USER=${USER:-$(whoami)}
 
-# Set your personal wandb entity so logs go to your own account
-export WANDB_ENTITY="marcobisky-google-org"
+# Let wandb use the default entity of the logged-in user (avoids org/team 403/404 errors)
+# To override, run: export WANDB_ENTITY=your-username && bash ./run_local_sdpo.sh
+unset WANDB_ENTITY
 
 # =============================================================================
 # EXECUTION
