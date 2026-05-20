@@ -54,7 +54,9 @@ algorithm.rollout_correction.rollout_is=token \
 actor_rollout_ref.actor.self_distillation.dont_reprompt_on_self_success=${DONTS_REPROMPT_ON_SELF_SUCCESS} \
 actor_rollout_ref.actor.self_distillation.alpha=$ALPHA \
 actor_rollout_ref.actor.optim.lr_warmup_steps=10 \
-actor_rollout_ref.rollout.val_kwargs.n=16"
+actor_rollout_ref.rollout.val_kwargs.n=16 \
+vars.dir=$PROJECT_ROOT \
+trainer.default_local_dir=$PROJECT_ROOT/checkpoints/$EXP_NAME"
 
 echo "----------------------------------------------------------------"
 echo "Starting Local SDPO Training"
