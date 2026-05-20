@@ -37,7 +37,7 @@ export PYTHONPATH=$PROJECT_ROOT:$PYTHONPATH
 export USER=${USER:-$(whoami)}
 
 # Set your personal wandb entity so logs go to your own account
-export WANDB_ENTITY="marcobisky"
+export WANDB_ENTITY="marcobisky-google-org"
 
 # =============================================================================
 # EXECUTION
