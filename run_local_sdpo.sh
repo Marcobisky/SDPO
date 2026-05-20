@@ -36,6 +36,9 @@ export PYTHONPATH=$PROJECT_ROOT:$PYTHONPATH
 # Define USER for Hydra config (required by user.yaml)
 export USER=${USER:-$(whoami)}
 
+# Set your personal wandb entity so logs go to your own account
+export WANDB_ENTITY="marcobisky"
+
 # =============================================================================
 # EXECUTION
 # =============================================================================
